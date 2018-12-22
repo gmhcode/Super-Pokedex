@@ -19,7 +19,7 @@ struct TopLevelDictionary: Codable {
 
 struct Pokemon: Codable, Equatable {
     
-    let name : String
+    var name : String
     let url: URL
     
     
@@ -41,6 +41,7 @@ struct PokemonImage: Codable {
 }
 
 struct Sprites: Codable {
+    
     let image : String?
 
 

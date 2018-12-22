@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class PokemonController {
+class PokemonMainListController {
     
     
     static let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon/")
@@ -16,11 +16,14 @@ class PokemonController {
     static func fetchMainPokemonList(completion: @escaping ([Pokemon]?) -> ()){
         
         
-        
         guard let url = baseUrl else {completion(nil) ; return}
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
             if let error = error {
+               
                 print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+                
                 completion(nil)
                 return
             }
@@ -30,34 +33,22 @@ class PokemonController {
             guard let data = data else {completion(nil) ; return}
             
             do{
+                
                 let jsonDecoder = JSONDecoder()
                 let pokemonData = try jsonDecoder.decode(TopLevelDictionary.self, from: data)
                 let pokemonList = pokemonData.results
+                
                 completion(pokemonList)
                 
                 
             }catch{
+                
                 print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+               
                 completion(nil)
                 return
             }
-            
-            
-            
         }.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
