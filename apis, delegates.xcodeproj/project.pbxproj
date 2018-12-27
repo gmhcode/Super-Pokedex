@@ -15,6 +15,9 @@
 		9083FE9D21C6EA8200EFB853 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083FE9C21C6EA8200EFB853 /* Pokemon.swift */; };
 		9083FE9F21C6EC4B00EFB853 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083FE9E21C6EC4B00EFB853 /* PokemonTableViewCell.swift */; };
 		9083FEA621C6F15F00EFB853 /* PokemonMainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083FEA521C6F15F00EFB853 /* PokemonMainListController.swift */; };
+		90E6DCC221D4128000C9B55A /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E6DCC121D4128000C9B55A /* CardsViewController.swift */; };
+		90E94EB821D15FE600726437 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E94EB721D15FE600726437 /* CardsTableViewController.swift */; };
+		90E94EBA21D16C1C00726437 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E94EB921D16C1C00726437 /* CardTableViewCell.swift */; };
 		90F8943F21CEEFED00B87FD0 /* PokemonCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F8943E21CEEFED00B87FD0 /* PokemonCards.swift */; };
 		90F8944121CEF19A00B87FD0 /* PokemonCardsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F8944021CEF19A00B87FD0 /* PokemonCardsController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		9083FE9C21C6EA8200EFB853 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		9083FE9E21C6EC4B00EFB853 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		9083FEA521C6F15F00EFB853 /* PokemonMainListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonMainListController.swift; sourceTree = "<group>"; };
+		90E6DCC121D4128000C9B55A /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		90E94EB721D15FE600726437 /* CardsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
+		90E94EB921D16C1C00726437 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		90F8943E21CEEFED00B87FD0 /* PokemonCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCards.swift; sourceTree = "<group>"; };
 		90F8944021CEF19A00B87FD0 /* PokemonCardsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				9083FE8B21C6E6F200EFB853 /* PokemonSearchViewController.swift */,
+				90E6DCC121D4128000C9B55A /* CardsViewController.swift */,
+				90E94EB721D15FE600726437 /* CardsTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9083FE9E21C6EC4B00EFB853 /* PokemonTableViewCell.swift */,
+				90E94EB921D16C1C00726437 /* CardTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,10 +209,13 @@
 			files = (
 				9083FE8C21C6E6F200EFB853 /* PokemonSearchViewController.swift in Sources */,
 				9083FE9F21C6EC4B00EFB853 /* PokemonTableViewCell.swift in Sources */,
+				90E6DCC221D4128000C9B55A /* CardsViewController.swift in Sources */,
 				9083FE8A21C6E6F200EFB853 /* AppDelegate.swift in Sources */,
 				90F8944121CEF19A00B87FD0 /* PokemonCardsController.swift in Sources */,
 				9083FE9D21C6EA8200EFB853 /* Pokemon.swift in Sources */,
+				90E94EB821D15FE600726437 /* CardsTableViewController.swift in Sources */,
 				9083FEA621C6F15F00EFB853 /* PokemonMainListController.swift in Sources */,
+				90E94EBA21D16C1C00726437 /* CardTableViewCell.swift in Sources */,
 				90F8943F21CEEFED00B87FD0 /* PokemonCards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

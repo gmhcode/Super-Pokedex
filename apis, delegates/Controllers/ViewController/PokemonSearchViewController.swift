@@ -12,17 +12,19 @@ class PokemonSearchViewController: UIViewController, UITableViewDelegate, UITabl
     
     var pokemonList : [Pokemon] = []
     
-   
-    
-    
-    
     @IBOutlet weak var pokemonListTableView: UITableView!
     @IBOutlet weak var pokemonListSearchBar: UISearchBar!
     
+   
+    
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemonListSearchBar.isHidden = false
+        
         
         PokemonMainListController.fetchMainPokemonList { (pokemonList) in
             
@@ -41,14 +43,12 @@ class PokemonSearchViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
         return pokemonList.count
     }
     
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        
-        
-        return true
-    }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -62,7 +62,37 @@ class PokemonSearchViewController: UIViewController, UITableViewDelegate, UITabl
         
         return cell
     }
-}
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "cardsScreenSegue" {
+            
+            guard let indexPath = pokemonListTableView.indexPathForSelectedRow else {return}
+            
+            let destinationVC = segue.destination as? CardsViewController
+            
+            let pokemonName = pokemonList[indexPath.row].name.lowercased()
+            
+            print(pokemonName)
+            
+
+            destinationVC?.pokemonNameLandingPad = pokemonName
+           }
+        }
+    
+    
+    
+    
+    
+    
+    
+    }
+
 
 
 extension PokemonSearchViewController: UISearchBarDelegate{
@@ -80,16 +110,20 @@ extension PokemonSearchViewController: UISearchBarDelegate{
                 
                 guard let indexOfPokemon = pokemonList.index(of: searchPokemonLoop) else {return}
                 
-                pokemonListTableView.scrollToRow(at: IndexPath(item: indexOfPokemon + 4, section: 0), at: UITableView.ScrollPosition.none, animated: true)
+                
+                // MARK: - Search scroll functionality. select row at has better functionality
+//                pokemonListTableView.scrollToRow(at: IndexPath(item: indexOfPokemon, section: 0), at: UITableView.ScrollPosition.none, animated: true)
                 
                 
-        }
-        
-        DispatchQueue.main.async {
+                
+                // MARK: - Search result as middle row functionality
+                pokemonListTableView.selectRow(at: IndexPath(item: indexOfPokemon, section: 0), animated: true, scrollPosition: .middle)
+                
+                
+            }
             
-            self.pokemonListTableView.reloadData()
         }
     }
-    }
-    
 }
+
+

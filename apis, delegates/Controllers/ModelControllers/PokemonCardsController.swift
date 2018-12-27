@@ -61,29 +61,21 @@ class PokemonCardController {
         
         let imageUrl = pokemonCardName.imageUrl
         
-        
-        
-        
-        
+        URLSession.shared.dataTask(with: imageUrl) { (data, _, error) in
+            
+            if let error = error {
+                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {return}
+            
+            let image = UIImage(data: data)
+            completion(image)
+            
+        }.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
     
